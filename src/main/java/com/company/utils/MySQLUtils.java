@@ -15,7 +15,7 @@ public class MySQLUtils {
 	 String hostName = "sql7.freemysqlhosting.net";
 	 String dbName = "sql7339540";
 	 String userName = "sql7339540";
-	 String password = "VI4dihTP2f";
+	 String password = "****";
      /*String hostName = "localhost";
      String dbName = "study_plan";
      String userName = "defaultuser";
