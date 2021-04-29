@@ -10,9 +10,9 @@ public class Connect {
         try {
             String url = "jdbc:sqlite::memory:";
             conn = DriverManager.getConnection(url);
-            
+
             System.out.println("Connection to SQLite has been established.");
-            
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -25,6 +25,7 @@ public class Connect {
             }
         }
     }
+
     public static void main(String[] args) {
         connect();
     }
