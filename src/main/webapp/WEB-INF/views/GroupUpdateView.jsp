@@ -9,12 +9,12 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-      <title>Update Group</title>
+      <title>Редагування групи</title>
    </head>
    <body>
   <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-      <h1><span class="blue">Update Group</span></h1>
+      <h1><span class="blue">Редагування групи</span></h1>
  
       <p style="color: red;">${errorString}</p>
  
@@ -23,35 +23,35 @@
          <form method="POST" action="${pageContext.request.contextPath}/editGroup">
             <input type="hidden" name="id" value="${Group.id}" />
                <p>ID <span style="color:red;">${Group.id}</span></p>
-                  Code
+                  Код
                   <input type="text" name="code" value="${Group.code}" />
-                  Name
+                  Назва
                   <input type="text" name="name" value="${Group.name}" />
-                  Year
+                  Рік
                   <input type="text" name="year" value="${Group.year}" />
-            	  Curriculum
+            	  Шифр НП
             	  <select name="curriculum_id">
             	  <option selected value="${Group.curriculum.id}">${Group.curriculum.name}</option>
             	  <c:forEach items="${CurriculumList}" var="Curriculum" >
             	  <option value="${Curriculum.id}">${Curriculum.name}</option>
             	  </c:forEach>
             	  </select>
-            	  Specialty
+            	  Спеціальність
             	  <select name="specialty_id">
             	  <option selected value="${Group.specialty.id}">${Group.specialty.name}</option>
             	  <c:forEach items="${SpecialtyList}" var="Specialty" >
             	  <option value="${Specialty.id}">${Specialty.name}</option>
             	  </c:forEach>
             	  </select>
-            	  Department
+            	  Факультет
             	  <select name="department_id">
             	  <option selected value="${Group.department.id}">${Group.department.name}</option>
             	  <c:forEach items="${DepartmentList}" var="Department" >
             	  <option value="${Department.id}">${Department.name}</option>
             	  </c:forEach>
             	  </select>
-                      <input type="submit" value="Submit" />
-                      <a href="javascript:history.back()">Cancel</a>
+                      <input type="submit" value="Зберігти" />
+                      <a href="javascript:history.back()">Відміна</a>
          </form>
       </div>
       </c:if>

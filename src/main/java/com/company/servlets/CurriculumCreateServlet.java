@@ -1,10 +1,5 @@
 package com.company.servlets;
 
-import com.company.model.Curriculum;
-import com.company.model.Specialty;
-import com.company.model.UploadDetail;
-import com.company.utils.MySQLUtils;
-import com.company.utils.MyUtils;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import com.company.model.*;
+import com.company.utils.*;
 
 @WebServlet(urlPatterns = {"/createCurriculum"})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
@@ -48,7 +46,7 @@ public class CurriculumCreateServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
                 //errorString = e.getMessage();
-                errorString = "Something went wrong";
+                errorString = MyUtils.ERROR_MESSAGE;
             }
             request.setAttribute("errorString", errorString);
             request.setAttribute("SpecialtyList", specialties);
@@ -69,12 +67,12 @@ public class CurriculumCreateServlet extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             conn = MySQLUtils.getMySQLConnection(MyUtils.getLoginedUser(session));
-            String idStr = (String) request.getParameter("id");
-            String name = (String) request.getParameter("name");
-            String yearStr = (String) request.getParameter("year");
-            //String file_url = (String) request.getParameter("file_url");
-            //String approvement_url = (String) request.getParameter("approvement_url");
-            String specialty_idStr = (String) request.getParameter("specialty_id");
+            String idStr = request.getParameter("id");
+            String name = request.getParameter("name");
+            String yearStr = request.getParameter("year");
+            //String file_url = request.getParameter("file_url");
+            //String approvement_url = request.getParameter("approvement_url");
+            String specialty_idStr = request.getParameter("specialty_id");
             int id = 0;
             int year = 0;
             int specialty_id = 0;
@@ -93,8 +91,8 @@ public class CurriculumCreateServlet extends HttpServlet {
                 fileUploadDirectory.mkdirs();
             }
 
-            String fileName = "";
-            UploadDetail details = null;
+            String fileName;
+            UploadDetail details;
             List<UploadDetail> fileList = new ArrayList<UploadDetail>();
             List<String> names = new ArrayList<String>();
 
@@ -106,9 +104,9 @@ public class CurriculumCreateServlet extends HttpServlet {
                 try {
                     part.write(uploadPath + File.separator + fileName);
                     names.add(fileName);
-                    details.setUploadStatus("Success");
+                    details.setUploadStatus(MyUtils.SUCCESS);
                 } catch (IOException ioObj) {
-                    details.setUploadStatus("Failure : " + ioObj.getMessage());
+                    details.setUploadStatus(MyUtils.FAILURE + ioObj.getMessage());
                 }
                 fileList.add(details);
             }
@@ -124,7 +122,7 @@ public class CurriculumCreateServlet extends HttpServlet {
                 } catch (SQLException e) {
                     e.printStackTrace();
                     //errorString = e.getMessage();
-                    errorString = "Something went wrong";
+                    errorString = MyUtils.ERROR_MESSAGE;
                 }
             }
 

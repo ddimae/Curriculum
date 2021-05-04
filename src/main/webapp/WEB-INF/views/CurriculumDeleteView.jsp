@@ -9,16 +9,16 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-    <title>Delete Curriculum</title>
+    <title>Видалення НП</title>
  </head>
  
  <body>
      <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-    <h1>Delete Curriculum</h1>
+    <h1>Видалення навчального плану</h1>
     
     <p style="color: red;">${errorString}</p>
-    <a href="CurriculumList">Curriculum List</a>
+    <a href="CurriculumList">Назад до списку планів</a>
     <jsp:include page="_footer.jsp"></jsp:include>
  </body>
 </html>

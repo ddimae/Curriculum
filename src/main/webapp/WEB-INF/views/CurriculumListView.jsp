@@ -9,13 +9,13 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-    <title>Curriculum List</title>
+    <title>Плани - StudyPlans</title>
  </head>
  <body>
  
   <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-    <h1>Curriculum List</h1>
+    <h1>Список навчальних планів</h1>
 	<div class="search">
 		<form method="POST" action="${pageContext.request.contextPath}/searchCurriculum">
 			<ul>
@@ -44,11 +44,11 @@
        <c:if test="${loginedUser.user_type=='2' || loginedUser.user_type=='1'}" >
           <th><h5>ID</h5></th>
        </c:if>
-          <th><h5>Name</h5></th>
-          <th><h5>Year</h5></th>
-          <th><h5>Specialty</h5></th>
-          <th><h5>File</h5></th>
-          <th><h5>Approvement</h5></th>
+          <th><h5>Найменування</h5></th>
+          <th><h5>Рік</h5></th>
+          <th><h5>Спеціальність</h5></th>
+          <th><h5>Файл із планом</h5></th>
+          <th><h5>Лист затвердження</h5></th>
        </tr>
        </thead>
     <tbody>

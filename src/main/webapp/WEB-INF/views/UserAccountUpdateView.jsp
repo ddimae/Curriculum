@@ -36,8 +36,8 @@
             	  <option value="1">Moderator</option>
             	  <option value="2">Administrator</option>
             	  </select>
-                      <input type="submit" value="Submit" />
-                      <a href="${pageContext.request.contextPath}/UserAccountList">Cancel</a>
+                      <input type="submit" value="Зберігти" />
+                      <a href="${pageContext.request.contextPath}/UserAccountList">Відміна</a>
          </form>
       </div>
       </c:if>

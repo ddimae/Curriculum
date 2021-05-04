@@ -18,7 +18,7 @@
      <jsp:include page="_header.jsp"></jsp:include>
      <jsp:include page="_menu.jsp"></jsp:include>
     
-      <h1>Home Page</h1>
+      <h1>Кафедра ПІІТУ. StudyPlans</h1>
     
      <jsp:include page="_footer.jsp"></jsp:include>
  

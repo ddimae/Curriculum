@@ -17,7 +17,7 @@
       <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
  
-      <h1>Login</h1>
+      <h1>Вхід в систему</h1>
       <p style="color: red;">${errorString}</p>
  
  	<div class="form-login">

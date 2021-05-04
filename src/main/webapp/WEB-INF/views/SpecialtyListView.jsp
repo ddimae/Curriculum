@@ -11,13 +11,13 @@
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-    <title>Specialty List</title>
+    <title>Специальности - StudyPlans</title>
  </head>
  <body>
  
   <jsp:include page="_header.jsp"></jsp:include>
     <jsp:include page="_menu.jsp"></jsp:include>
-    <h1>Specialty List</h1>
+    <h1>Спеціальності</h1>
     <div class="search">
 		<form method="POST" action="${pageContext.request.contextPath}/searchSpecialty">
 			<ul>

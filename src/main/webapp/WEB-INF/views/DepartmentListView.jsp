@@ -10,13 +10,13 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-      <title>Department List</title>
+      <title>Кафедри - StudyPlans</title>
  </head>
  <body>
  
   <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-    <h1>Department List</h1>
+    <h1>Список кафедр</h1>
  	<div class="search">
 		<form method="POST" action="${pageContext.request.contextPath}/searchDepartment">
 			<ul>
@@ -46,10 +46,10 @@
        <c:if test="${loginedUser.user_type=='2' || loginedUser.user_type=='1'}" >
           <th><h5>ID</h5></th>
        </c:if>
-          <th><h5>Code</h5></th>
-          <th><h5>Name</h5></th>
-          <th><h5>Short Name</h5></th>
-          <th><h5>Faculty</h5></th>
+          <th><h5>Код</h5></th>
+          <th><h5>Найменування</h5></th>
+          <th><h5>Скорочення</h5></th>
+          <th><h5>Факультет</h5></th>
        </tr>
        </thead>
        <tbody>

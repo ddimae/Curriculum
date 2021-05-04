@@ -18,7 +18,7 @@
     <h1>Delete Specialty</h1>
     
     <p style="color: red;">${errorString}</p>
-    <a href="SpecialtyList">Specialty List</a>
+    <a href="SpecialtyList">Назад до списку спеціальностей</a>
     <jsp:include page="_footer.jsp"></jsp:include>
  </body>
 </html>

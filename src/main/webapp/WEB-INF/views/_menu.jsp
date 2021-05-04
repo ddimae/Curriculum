@@ -11,13 +11,13 @@
 		<td onClick="document.location.href='${pageContext.request.contextPath}/UserAccountList'">Users</td>
 		</c:if>
 		<c:if test="${user.user_type=='1' || user.user_type=='0'}" >
-		<td onClick="document.location.href='${pageContext.request.contextPath}/CurriculumList'">Curriculums</td>
-		<td onClick="document.location.href='${pageContext.request.contextPath}/DepartmentList'">Departments</td>
-		<td onClick="document.location.href='${pageContext.request.contextPath}/DisciplineList'">Disciplines</td>
-		<td onClick="document.location.href='${pageContext.request.contextPath}/FacultyList'">Faculties</td>
-		<td onClick="document.location.href='${pageContext.request.contextPath}/GroupList'">Groups</td>
-		<td onClick="document.location.href='${pageContext.request.contextPath}/SpecialtyList'">Specialties</td>
-		<td onClick="document.location.href='${pageContext.request.contextPath}/DisciplineCurriculumList'">Discipline curriculums</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/CurriculumList'">Навчальні плани</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/DepartmentList'">Кафедри</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/DisciplineList'">Дисципліни</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/FacultyList'">Факультети</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/GroupList'">Групи</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/SpecialtyList'">Спеціальності</td>
+		<td onClick="document.location.href='${pageContext.request.contextPath}/DisciplineCurriculumList'">Дисципліни плану</td>
 		</c:if>		
 	</tr>
 	</tbody>
@@ -28,13 +28,13 @@
 		<li><a href="${pageContext.request.contextPath}/UserAccountList"><i class="fa fa-user"></i> Users</a>
 	</c:if>
 	<c:if test="${loginedUser.user_type=='2' || loginedUser.user_type=='1' || loginedUser.user_type=='0' || loginedUser.user_type==null}" >
-		<li><a href="${pageContext.request.contextPath}/CurriculumList">Curriculums</a></li>
-		<li><a href="${pageContext.request.contextPath}/DepartmentList">Departments</a></li>
-		<li><a href="${pageContext.request.contextPath}/DisciplineList">Disciplines</a></li>
-		<li><a href="${pageContext.request.contextPath}/FacultyList">Faculties</a></li>
-		<li><a href="${pageContext.request.contextPath}/GroupList">Groups</a></li>
-		<li><a href="${pageContext.request.contextPath}/SpecialtyList">Specialties</a></li>
-		<li><a href="${pageContext.request.contextPath}/DisciplineCurriculumList">Discipline curriculums</a></li>
+		<li><a href="${pageContext.request.contextPath}/CurriculumList">Навчальні плани</a></li>
+		<li><a href="${pageContext.request.contextPath}/FacultyList">Факультети</a></li>
+		<li><a href="${pageContext.request.contextPath}/DepartmentList">Кафедри</a></li>
+		<li><a href="${pageContext.request.contextPath}/SpecialtyList">Спеціальності</a></li><li>
+		<a href="${pageContext.request.contextPath}/GroupList">Групи</a></li><li>
+		<a href="${pageContext.request.contextPath}/DisciplineList">Дисципліни</a></li>
+		<li><a href="${pageContext.request.contextPath}/DisciplineCurriculumList">Дисципліни плану</a></li>
 	</c:if>
 	</ul>
 	</div>

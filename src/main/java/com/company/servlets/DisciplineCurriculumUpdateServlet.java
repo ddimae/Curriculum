@@ -1,11 +1,5 @@
 package com.company.servlets;
 
-import com.company.model.Curriculum;
-import com.company.model.Discipline;
-import com.company.model.DisciplineCurriculum;
-import com.company.model.UploadDetail;
-import com.company.utils.MySQLUtils;
-import com.company.utils.MyUtils;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
@@ -21,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import com.company.model.*;
+import com.company.utils.*;
 
 @WebServlet(urlPatterns = {"/editDisciplineCurriculum"})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
@@ -66,7 +63,7 @@ public class DisciplineCurriculumUpdateServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
                 //errorString = e.getMessage();
-                errorString = "Something went wrong";
+                errorString = MyUtils.ERROR_MESSAGE;
             }
             if (errorString != null && DisciplineCurriculum == null) {
                 response.sendRedirect(request.getServletPath() + "/DisciplineCurriculumList");
@@ -162,9 +159,9 @@ public class DisciplineCurriculumUpdateServlet extends HttpServlet {
                 details.setFileSize(part.getSize() / 1024);
                 try {
                     part.write(uploadPath + File.separator + fileName);
-                    details.setUploadStatus("Success");
+                    details.setUploadStatus(MyUtils.SUCCESS);
                 } catch (IOException ioObj) {
-                    details.setUploadStatus("Failure : " + ioObj.getMessage());
+                    details.setUploadStatus(MyUtils.FAILURE + ioObj.getMessage());
                 }
                 fileList.add(details);
             }
@@ -190,7 +187,7 @@ public class DisciplineCurriculumUpdateServlet extends HttpServlet {
                 } catch (SQLException e) {
                     e.printStackTrace();
                     //errorString = e.getMessage();
-                    errorString = "Something went wrong";
+                    errorString = MyUtils.ERROR_MESSAGE;
                 }
             }
 

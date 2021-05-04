@@ -9,12 +9,12 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-      <title>Update Discipline</title>
+      <title>Редагування дисципліни</title>
    </head>
    <body>
   <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-      <h1>Update Discipline</h1>
+      <h1>Редагування дисципліни</h1>
  
       <p style="color: red;">${errorString}</p>
  
@@ -23,14 +23,14 @@
          <form method="POST" action="${pageContext.request.contextPath}/editDiscipline">
             <input type="hidden" name="id" value="${Discipline.id}" />
                <p>ID <span style="color:red">${Discipline.id}</span></p>
-                  Code
+                  Код
                   <input type="text" name="code" value="${Discipline.code}" />
-                  Name
+                  Найменування
                   <input type="text" name="name" value="${Discipline.name}" />
-                  Short Name
+                  Скорочення
                   <input type="text" name="short_name" value="${Discipline.short_name}" />
-                      <input type="submit" value="Submit" />
-                      <a href="javascript:history.back()">Cancel</a>
+                      <input type="submit" value="Зберігти" />
+                      <a href="javascript:history.back()">Відміна</a>
          </form>
       </div>
       </c:if>

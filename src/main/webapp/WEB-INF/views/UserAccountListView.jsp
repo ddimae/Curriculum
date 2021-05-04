@@ -12,7 +12,7 @@
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-    <title>Users</title>
+    <title>Users - StudyPlans</title>
  </head>
  <body>
  

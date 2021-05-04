@@ -9,12 +9,12 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-      <title>Update Department</title>
+      <title>Редагування кафедри</title>
    </head>
    <body>
   <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-      <h1>Update Department</h1>
+      <h1>Редагування кафедри</h1>
  
       <p style="color: red;">${errorString}</p>
  
@@ -23,13 +23,13 @@
          <form method="POST" action="${pageContext.request.contextPath}/editDepartment">
             <input type="hidden" name="id" value="${Department.id}" />
                <p>ID <span style="color:red">${Department.id}</span></p>
-                  Code
+                  Код
                   <input type="text" name="code" value="${Department.code}" />
-                  Name
+                  Найменування
                   <input type="text" name="name" value="${Department.name}" />
-                  Short Name
+                  Скорочення
                   <input type="text" name="short_name" value="${Department.short_name}" />
-                  Faculty
+                  Факультет
                	  <select name="faculty_id">
                	  <option selected value="${Department.faculty.id}">${Department.faculty.name}</option>
 	           	  <c:forEach items="${FacultyList}" var="Faculty" >
@@ -37,8 +37,8 @@
 	              </c:forEach>
            		  </select>
            		  <p>
-                      <input type="submit" value="Submit" />
-                      <a href="javascript:history.back()">Cancel</a></p>
+                      <input type="submit" value="Зберігти" />
+                      <a href="javascript:history.back()">Відміна</a></p>
          </form>
       </div>   
       </c:if>

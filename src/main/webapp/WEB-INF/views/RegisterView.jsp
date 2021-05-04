@@ -54,8 +54,8 @@ function validate()
 	 <input type="password" name="user_password" />
 	 Confirm Password<input type="password" name="conpassword" />
 	 <%=(request.getAttribute("errMessage") == null) ? ""
-	 : request.getAttribute("errMessage")%><input type="submit" value="Register"></input>
-	 <input type="button" value= "Cancel" onClick="document.location.href='${pageContext.request.contextPath}/'" />
+	 : request.getAttribute("errMessage")%><input type="submit" value="Реєстрація"></input>
+	 <input type="button" value= "Відміна" onClick="document.location.href='${pageContext.request.contextPath}/'" />
 	</form>
 </div>
       <h3>${errorString}</h3>

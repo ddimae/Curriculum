@@ -15,7 +15,7 @@
     <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
  
-    <h1>Welcome, ${loginedUser.user_name}</h1>
+    <h1>Вітаю, ${loginedUser.user_name}</h1>
  
     <p>User Name: <b>${loginedUser.user_name}</b></p>
     <p>E-mail: <b>${loginedUser.user_email}</b></p>

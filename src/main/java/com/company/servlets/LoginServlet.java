@@ -14,23 +14,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = {"/login"})
+@WebServlet(urlPatterns = { "/login" })
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+ 
     public LoginServlet() {
         super();
     }
-
+ 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/LoginView.jsp");
-
+ 
         dispatcher.forward(request, response);
-
+ 
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,21 +37,21 @@ public class LoginServlet extends HttpServlet {
         String user_password = request.getParameter("user_password");
         String rememberMeStr = request.getParameter("rememberMe");
         boolean remember = "Y".equals(rememberMeStr);
-
+ 
         UserAccount user = null;
         boolean hasError = false;
         String errorString = null;
-
+ 
         if (user_name == null || user_password == null || user_name.length() == 0 || user_password.length() == 0) {
             hasError = true;
             errorString = "Required username and password!";
         } else {
             Connection conn = null;
-            try {
-                conn = MySQLUtils.getSQLiteConnection(request, response);
-            } catch (ClassNotFoundException e1) {
-                e1.printStackTrace();
-            }
+			try {
+				conn = MySQLUtils.getSQLiteConnection(request, response);
+			} catch (ClassNotFoundException e1) {
+				e1.printStackTrace();
+			}
             try {
                 user = MyUtils.findUser(conn, user_name, user_password);
                 conn.close();
@@ -64,32 +63,34 @@ public class LoginServlet extends HttpServlet {
                 e.printStackTrace();
                 hasError = true;
                 //errorString = e.getMessage();
-                errorString = "Something went wrong";
+	                errorString = MyUtils.ERROR_MESSAGE;
             }
         }
         if (hasError) {
             user = new UserAccount();
             user.setUser_name(user_name);
             user.setUser_password(user_password);
-
+ 
             request.setAttribute("errorString", errorString);
             request.setAttribute("user", user);
             RequestDispatcher dispatcher //
                     = this.getServletContext().getRequestDispatcher("/WEB-INF/views/LoginView.jsp");
-
+ 
             dispatcher.forward(request, response);
-        } else {
+        }
+        else {
             HttpSession session = request.getSession();
             MyUtils.storeLoginedUser(session, user);
-
+            
             if (remember) {
                 MyUtils.storeUserCookie(response, user);
-            } else {
+            }
+            else {
                 MyUtils.deleteUserCookie(response);
             }
-
+ 
             response.sendRedirect(request.getContextPath() + "/userInfo");
         }
     }
-
+ 
 }

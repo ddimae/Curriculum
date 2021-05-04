@@ -4,6 +4,7 @@ import com.company.model.Department;
 import com.company.model.UserAccount;
 import com.company.utils.MySQLUtils;
 import com.company.utils.MyUtils;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -49,7 +50,7 @@ public class DepartmentSearchServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
                 //errorString = e.getMessage();
-                errorString = "Something went wrong";
+                errorString = MyUtils.ERROR_MESSAGE;
             }
             for (Department d : list) {
                 d.setFaculty(MyUtils.findFacultyByDepartment(conn, d.getId()));

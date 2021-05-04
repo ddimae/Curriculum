@@ -12,13 +12,13 @@
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-    <title>Discipline List</title>
+    <title>Дисципліни - StudyPlans</title>
  </head>
  <body>
  
   <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-    <h1>Discipline List</h1>
+    <h1>Список дисциплін</h1>
     <div class="search">
 		<form method="POST" action="${pageContext.request.contextPath}/searchDiscipline">
 			<ul>
@@ -48,9 +48,9 @@
        <c:if test="${loginedUser.user_type=='2' || loginedUser.user_type=='1'}" >
           <th><h5>ID</h5></th>
        </c:if>
-          <th><h5>Code</h5></th>
-          <th><h5>Name</h5></th>
-          <th><h5>Short Name</h5></th>
+          <th><h5>Код</h5></th>
+          <th><h5>Найменування</h5></th>
+          <th><h5>Скорочення</h5></th>
        </tr>
        </thead>
        <tbody>

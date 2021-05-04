@@ -4,7 +4,7 @@
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div style="height: 55px; padding: 5px;">
   <div style="float: left">
-     <h1><a href="${pageContext.request.contextPath}/">Curriculum</a></h1>
+     <h1><a href="${pageContext.request.contextPath}/">StudyPlans</a></h1>
   </div>
  
   <div style="float: right; padding: 10px; text-align: right;">

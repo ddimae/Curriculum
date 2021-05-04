@@ -9,16 +9,16 @@
       <link rel="alternate stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/stool_light.css" title="alternate" />
       <script src="https://kit.fontawesome.com/982c488da8.js"></script>
       <script type="text/javascript" src="${pageContext.request.contextPath}/styles/styleswitcher.js"></script>
-    <title>Delete Group</title>
+    <title>Видалення групи</title>
  </head>
  
  <body>
      <jsp:include page="_header.jsp"></jsp:include>
       <jsp:include page="_menu.jsp"></jsp:include>
-    <h1>Delete Group</h1>
+    <h1>Видалення групи</h1>
     
     <p style="color: red;">${errorString}</p>
-    <a href="GroupList">Group List</a>
+    <a href="GroupList">Назад до списку груп</a>
     <jsp:include page="_footer.jsp"></jsp:include>
  </body>
 </html>
